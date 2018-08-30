@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180403032717_added_entity_Project.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180403032718_added_entity_Node.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180403032719_added_entity_Server.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180403032720_added_entity_ApplicationMeta.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180403032721_added_entity_ApplicationMetaHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180403032722_added_entity_Application.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180403032723_added_entity_ApplicationConfig.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180403032724_added_entity_PrivateConfig.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180403032725_added_entity_PrivateConfigHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180403032726_added_entity_NodeConfig.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180403032727_added_entity_NodeConfigHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180403032728_added_entity_GlobalConfig.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180403032729_added_entity_GlobalConfigHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426043230_added_entity_ProjectHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426043232_added_entity_NodeHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426043234_added_entity_ServerHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426043238_added_entity_ApplicationHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426043240_added_entity_ApplicationConfigHistory.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180426052416_added_entity_ClientHeartbeatInfo.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20180403032718_added_entity_constraints_Node.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180403032719_added_entity_constraints_Server.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180403032720_added_entity_constraints_ApplicationMeta.xml" relativeToChangelogFile="false"/>
+    <!--<include file="config/liquibase/changelog/20180403032721_added_entity_constraints_ApplicationMetaHistory.xml" relativeToChangelogFile="false"/>-->
+    <include file="config/liquibase/changelog/20180403032722_added_entity_constraints_Application.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180403032723_added_entity_constraints_ApplicationConfig.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20180403032724_added_entity_constraints_PrivateConfig.xml" relativeToChangelogFile="false"/>
+    <!--<include file="config/liquibase/changelog/20180403032725_added_entity_constraints_PrivateConfigHistory.xml" relativeToChangelogFile="false"/>-->
+    <include file="config/liquibase/changelog/20180403032726_added_entity_constraints_NodeConfig.xml" relativeToChangelogFile="false"/>
+    <!--<include file="config/liquibase/changelog/20180403032727_added_entity_constraints_NodeConfigHistory.xml" relativeToChangelogFile="false"/>-->
+    <include file="config/liquibase/changelog/20180403032728_added_entity_constraints_GlobalConfig.xml" relativeToChangelogFile="false"/>
+    <!--<include file="config/liquibase/changelog/20180403032729_added_entity_constraints_GlobalConfigHistory.xml" relativeToChangelogFile="false"/>-->
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>

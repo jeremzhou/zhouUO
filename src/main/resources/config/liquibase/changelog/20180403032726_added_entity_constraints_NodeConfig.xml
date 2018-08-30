@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity NodeConfig.
+    -->
+    <changeSet id="20180403032726-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="application_meta_id"
+                                 baseTableName="node_config"
+                                 constraintName="fk_node_config_application_meta_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="application_meta"/>
+
+        <addForeignKeyConstraint baseColumnNames="node_id"
+                                 baseTableName="node_config"
+                                 constraintName="fk_node_config_node_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="node"/>
+
+    </changeSet>
+</databaseChangeLog>

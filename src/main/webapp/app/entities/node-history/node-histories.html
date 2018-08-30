@@ -1,0 +1,64 @@
+<div>
+    <h2 data-translate="uapolloApp.nodeHistory.home.title">Node Histories</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="node-history.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="uapolloApp.nodeHistory.home.createLabel">
+                        Create new Node History
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="uapolloApp.nodeHistory.projectId">Project Id</span></th>
+                    <th><span data-translate="uapolloApp.nodeHistory.nodeId">Node Id</span></th>
+                    <th><span data-translate="uapolloApp.nodeHistory.name">Name</span></th>
+                    <th><span data-translate="uapolloApp.nodeHistory.operation">Operation</span></th>
+                    <th><span data-translate="uapolloApp.nodeHistory.createTime">Create Time</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="nodeHistory in vm.nodeHistories track by nodeHistory.id">
+                    <td><a ui-sref="node-history-detail({id:nodeHistory.id})">{{nodeHistory.id}}</a></td>
+                    <td>{{nodeHistory.projectId}}</td>
+                    <td>{{nodeHistory.nodeId}}</td>
+                    <td>{{nodeHistory.name}}</td>
+                    <td data-translate="{{'uapolloApp.Operation.' + nodeHistory.operation}}">{{nodeHistory.operation}}</td>
+                    <td>{{nodeHistory.createTime}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="node-history-detail({id:nodeHistory.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="node-history.edit({id:nodeHistory.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="node-history.delete({id:nodeHistory.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

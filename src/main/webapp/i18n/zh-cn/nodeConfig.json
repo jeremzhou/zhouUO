@@ -1,0 +1,27 @@
+
+{
+    "uapolloApp": {
+        "nodeConfig" : {
+            "home": {
+                "title": "Node Configs",
+                "createLabel": "创建新 Node Config",
+                "createOrEditLabel": "创建或编辑 Node Config"
+            },
+            "created": "Node Config {{ param }} 创建成功",
+            "updated": "Node Config {{ param }} 更新成功",
+            "deleted": "Node Config {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Node Config {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Node Config"
+            },
+            "key": "Key",
+            "value": "Value",
+            "createTime": "Create Time",
+            "modifyTime": "Modify Time",
+            "applicationMeta": "Application Meta",
+            "node": "Node"
+        }
+    }
+}

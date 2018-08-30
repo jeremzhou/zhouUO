@@ -1,0 +1,108 @@
+#spring boot properties
+#http:/docs.spring.io/spring-boot/docs/1.5.9.RELEASE/reference/htmlsingle/#common-application-properties
+
+# EMBEDDED SERVER CONFIGURATION (ServerProperties)
+server:
+  # Network address to which the server should bind to.
+  address: 0.0.0.0
+  # Server HTTP port.
+  port: 8080
+  # Time in milliseconds that connectors will wait for another HTTP request before closing the connection. When not set, the connector's container-specific default will be used. Use a value of -1 to indicate no (i.e. infinite) timeout.
+  connection-timeout: 60000
+  tomcat:
+    # Maximum queue length for incoming connection requests when all possible request processing threads are in use.
+    accept-count: 8129
+    # Maximum number of connections that the server will accept and process at any given time.
+    max-connections: 8192
+    # Maximum amount of worker threads.
+    max-threads: 4096
+    # Minimum amount of worker threads.
+    min-spare-threads: 128
+
+# SPRING WEB SERVICES (WebServicesProperties)
+cxf:
+  # Path that serves as the base URI for the services.
+  path: /aaa/soap
+  
+spring:
+  webservices:
+    servlet:
+      # Load on startup priority of the Spring Web Services servlet.
+      load-on-startup: 3
+
+#utstarcom aaa config
+aaa:
+  #aaa base config
+  base:
+    #if encrypt 1:yes 0:no
+    authenticatorEncrypt: 1
+    #nodeid for each aaa
+    nodeId: 1
+    #VerifyTokenExpried:  if check token time
+    verifyTokenExpried: 1
+    #TokenExpiredTime Unit: Day
+    tokenExpiredTime: 10
+    #################################################################################
+    # when no data in Redis, set the EmptyingMode_Enable to TRUE. 
+    # AAA provide the basic auth service, no provide the order service.
+    #################################################################################
+    emptyingModeEnable: 0
+    #################################################################################
+    # MSLR automatically generate the empty data of the user.
+    #################################################################################
+    #[EmptyingMode_Prepare]
+    #MultiCastUserID=kk_mobile
+    uniCastUserID:
+    #******************************************************#
+    #**** APK Upgrade strategy, base on    ****************#
+    #**** 1:  user group      ****************#
+    #**** 2:  network address   ****************#
+    #**** 3:  stbtype     ****************#
+    #******************************************************#
+    upgradeTuleType: 1
+    ################################################################################
+    #is interface to sop 0:no 1:yes
+    ################################################################################
+    supportSop: 1
+    ################################################################################
+    #DateTime format
+    ################################################################################
+    #timeformat=yyyy/MM/dd HH:mm:ss
+    timeFormat: yyyy-MM-dd HH:mm:ss    
+    ################################################################################
+    #OrderRelationshipExpiredDeleteTaskTime 3:everyday 03:00:00 do OrderRelationshipExpiredDeleteTaskTime
+    ################################################################################
+    orderRelationshipExpiredDeleteTaskTime: 0 0 3 * * ?
+    ################################################################################
+    #_MsgStatisTask_Process=120 every 120s do MsgStatisTask
+    ################################################################################
+    msgStatisTaskProcessTime: 10
+    ################################################################################
+    #statusflag AAAStatusPort
+    ################################################################################
+    statusflag: 0
+    ################################################################################
+    #cdrdata dir
+    ################################################################################
+    cdrdata:
+      path: ${spring.property.path}/cdrdata
+      orderDir: ${aaa.base.cdrdata.path}/order/
+      accountDir: ${aaa.base.cdrdata.path}/account/
+      onlineInDir: ${aaa.base.cdrdata.path}/online/in/
+      loginDir: ${aaa.base.cdrdata.path}/online/in/
+      #statis counter  
+      performanceDir: ${aaa.base.cdrdata.path}/performance/
+  #aaa redis config
+  redis:
+    timeout: 3600
+    #sentinel configuration
+    jedisMaxIdle: 50
+    jedisMaxTotal: 10000
+    jedisMaxWaitMillis: 50000
+    #redis password
+    #redisPassword=rss123
+    #sentinels=10.48.115.25:26378,10.48.115.30:26378,10.48.115.35:26378
+    #sentinels=10.80.248.30:26378,10.80.248.31:26378,10.80.248.23:26378
+    sentinels: 10.49.100.40:26378
+    #sentinels: 10.50.13.68:26376,10.50.13.68:26377,10.50.13.68:26378
+    selectId: 0

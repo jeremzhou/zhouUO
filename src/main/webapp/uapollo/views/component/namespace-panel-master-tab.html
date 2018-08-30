@@ -1,0 +1,359 @@
+<!--master panel body-->
+
+<section class="master-panel-body">
+   <!--私有配置信息  -->
+     <div class="collapse in">
+        <header class="panel-heading second-panel-heading">
+             <div class="row">
+              <h4 class="col-md-6 col-sm-6 pull-left">
+                <span>私有配置</span>
+              </h4>
+                <div class="col-md-6 col-sm-6 text-right">
+                      <button type="button" class="btn btn-success btn-sm"
+                        data-tooltip="tooltip" data-placement="bottom" title="发布配置"
+                        ng-click="publish(namespace)">
+                    <img src="img/release.png">
+                    发布
+                     </button>
+                &nbsp;
+                    <button type="button" class="btn btn-primary btn-sm pull-right"
+                            ng-click="createItem(1)">
+                        <img src="img/plus.png">
+                        新增配置
+                    </button>
+                </div>
+            </div>
+        </header> 
+
+       <!--  namespace body -->
+       <section>
+            <div class="namespace-view-table">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th class="hover" title="排序"
+                                ng-click="col='item.key';desc=!desc;">
+                                Key&nbsp;
+                            </th>
+                            <th>
+                                Value
+                            </th>
+                            <th>
+                                                                                     操作
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- ng-if="config.item.key" -->
+                        <tr ng-repeat="privateConfig in privateConfigs track by $index |orderBy:col:desc"
+                            ng-class="{'warning': !privateConfig.value}">
+                            <td width="36%" class="cursor-pointer" title="点击查看" ng-click="showText(config.item.key)">
+                                <span ng-bind="privateConfig.key | limitTo: 250"></span>
+                                <span ng-bind="privateConfig.item.key.length > 250 ? '...' :''"></span>
+                            </td>
+                            <td width="34%" class="cursor-pointer" title="点击查看" ng-click="showText(privateConfig.item.value)">
+                                <span ng-bind="privateConfig.value | limitTo: 250"></span>
+                                <span ng-bind="privateConfig.value.length > 250 ? '...': ''"></span>
+                            </td>
+                            <td width="30%" class="text-center" ng-if="!config.isDeleted">
+                                <img src="img/edit.png" data-tooltip="tooltip" data-placement="bottom" title="修改"
+                                     ng-click="editItem(namespace, privateConfig.item, 1)"
+                                     ng-show="hasModifyPermission" ng-disabled="true">
+                                <img style="margin-left: 5px;" src="img/cancel.png"
+                                     data-tooltip="tooltip" data-placement="bottom" title="删除"
+                                     ng-click="preDeleteItem(namespace, config.item.id, 1)"
+                                     ng-show="hasModifyPermission" ng-disabled="true">
+                            </td>
+                          
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section> 
+        </div>
+   </section> 
+      
+   <!--节点配置信息 --> 
+   <section class="master-panel-body">
+     <div class="collapse in">
+        <header class="panel-heading second-panel-heading">
+             <div class="row">
+              <h4 class="col-md-6 col-sm-6 pull-left">
+                <span>私有配置</span>
+              </h4>
+                <div class="col-md-6 col-sm-6 text-right">
+                      <button type="button" class="btn btn-success btn-sm"
+                        data-tooltip="tooltip" data-placement="bottom" title="发布配置"
+                        ng-click="publish(namespace)">
+                    <img src="img/release.png">
+                    发布
+                     </button>
+                &nbsp;
+                    <button type="button" class="btn btn-primary btn-sm pull-right"
+                            ng-click="createItem(1)">
+                        <img src="img/plus.png">
+                        新增配置
+                    </button>
+                </div>
+            </div>
+        </header> 
+
+       <!--  namespace body -->
+       <section>
+            <div class="namespace-view-table">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th class="hover" title="排序"
+                                ng-click="col='item.key';desc=!desc;">
+                                Key&nbsp;
+                            </th>
+                            <th>
+                                Value
+                            </th>
+                            <th>
+                                                                                     操作
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <!-- ng-if="config.item.key" -->
+                        <tr ng-repeat="privateConfig in privateConfigs track by $index |orderBy:col:desc"
+                            ng-class="{'warning': !privateConfig.value}">
+                            <td width="36%" class="cursor-pointer" title="点击查看" ng-click="showText(config.item.key)">
+                                <span ng-bind="privateConfig.key | limitTo: 250"></span>
+                                <span ng-bind="privateConfig.item.key.length > 250 ? '...' :''"></span>
+                            </td>
+                            <td width="34%" class="cursor-pointer" title="点击查看" ng-click="showText(privateConfig.item.value)">
+                                <span ng-bind="privateConfig.value | limitTo: 250"></span>
+                                <span ng-bind="privateConfig.value.length > 250 ? '...': ''"></span>
+                            </td>
+                            <td width="30%" class="text-center" ng-if="!config.isDeleted">
+                                <img src="img/edit.png" data-tooltip="tooltip" data-placement="bottom" title="修改"
+                                     ng-click="editItem(namespace, privateConfig.item, 1)"
+                                     ng-show="hasModifyPermission" ng-disabled="true">
+                                <img style="margin-left: 5px;" src="img/cancel.png"
+                                     data-tooltip="tooltip" data-placement="bottom" title="删除"
+                                     ng-click="preDeleteItem(namespace, config.item.id, 1)"
+                                     ng-show="hasModifyPermission" ng-disabled="true">
+                            </td>
+                          
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section> 
+        </div>
+   </section> 
+  <!--  <section>
+     <div class="collapse in">
+        <header class="panel-heading second-panel-heading">
+             <div class="row">
+              <h4 class="col-md-6 col-sm-6 pull-left">
+                <span>节点配置</span>
+              </h4>
+                <div class="col-md-6 col-sm-6 text-right">
+                      <button type="button" class="btn btn-success btn-sm"
+                        data-tooltip="tooltip" data-placement="bottom" title="发布配置"
+                        ng-disabled="namespace.isTextEditing"
+                        ng-click="publish(namespace)">
+                    <img src="img/release.png">
+                    发布
+                     </button>
+                &nbsp;
+                    <button type="button" class="btn btn-primary btn-sm pull-right"
+                            ng-click="createItem(2)">
+                        <img src="img/plus.png">
+                        新增配置
+                    </button>
+                </div>
+            </div>
+         </header> 
+        namespace body
+        <section>
+            <div class="namespace-view-table">
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                        <tr>
+                            <th class="hover" title="排序"
+                                ng-click="col='item.key';desc=!desc;">
+                                Key&nbsp;
+                            </th>
+                            <th>
+                                Value
+                            </th>
+                            <th>
+                                操作
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="nodeConfig in nodeConfigs track by $index"
+                                ng-class="{'warning': !nodeConfig.value}">
+                                <td width="36%" class="cursor-pointer" title="点击查看" ng-click="showText(nodeConfig.key)">
+                                    <span ng-bind="nodeConfig.key | limitTo: 250"></span>
+                                    <span ng-bind="nodeConfig.key.length > 250 ? '...' :''"></span>
+                                </td>
+                                <td width="34%" class="cursor-pointer" title="点击查看" ng-click="showText(nodeConfig.value)">
+                                    <span ng-bind="nodeConfig.value | limitTo: 250"></span>
+                                    <span ng-bind="nodeConfig.value.length > 250 ? '...': ''"></span>
+                                </td>
+                                <td width="30%" class="text-center" ng-if="!config.isDeleted">
+                                    <img src="img/edit.png" height="35px" width="35px" data-tooltip="tooltip" data-placement="bottom" title="修改"
+                                         ng-click="editItem(namespace, nodeConfig.key, 2)"
+                                         ng-show="hasModifyPermission" ng-disabled="true">
+                                    <img style="margin-left: 5px;" src="img/cancel.png"
+                                         data-tooltip="tooltip" data-placement="bottom" title="删除"
+                                         ng-click="preDeleteItem(namespace, nodeConfig.key,2)"
+                                         ng-show="hasModifyPermission" ng-disabled="true">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section> 
+        </div>
+   </section>    -->
+      
+    <!--全局配置信息  -->
+  <section>
+      <div class="collapse in">
+	        <header class="panel-heading second-panel-heading">
+	             <div class="row">
+	              <h4 class="col-md-6 col-sm-6 pull-left">
+	                <span>全局配置</span>
+	              </h4>
+	              <div class="col-md-6 col-sm-6 text-right">
+	                    <button type="button" class="btn btn-success btn-sm"
+	                        data-tooltip="tooltip" data-placement="bottom" title="发布配置"
+	                        ng-show="true"
+	                        ng-disabled="namespace.isTextEditing"
+	                        ng-click="publish(namespace)">
+	                    <img src="img/release.png">
+	                    发布
+	                     </button>
+	                &nbsp;
+	                    <button type="button" class="btn btn-primary btn-sm pull-right"
+	                            ng-click="createItem(3)">
+	                        <img src="img/plus.png">
+	                        新增配置
+	                    </button>
+	                </div>
+	            </div>
+	        </header> 
+
+        <!--namespace body-->
+	       <section>
+	            <div class="namespace-view-table">
+	                <!-- not link namespace -->
+	                <div>
+	                    <table class="table table-bordered table-striped table-hover">
+	                        <thead>
+	                        <tr>
+	                           <!--  <th>发布状态</th> -->
+	                            <th class="hover" title="排序"
+	                                ng-click="col='item.key';desc=!desc;">
+	                                Key&nbsp;
+	                                <!-- <span class="glyphicon glyphicon-sort"></span> -->
+	                            </th>
+	                            <th>
+	                                Value
+	                            </th>
+	                            <th>
+	                                操作
+	                            </th>
+	                        </tr>
+	                        </thead>
+	                        <tbody>
+	                        <tr ng-repeat="globalConfig in globalConfigs track by $index"
+	                            ng-class="{'warning': !config.value}">
+	                            <td width="36%" class="cursor-pointer" title="点击查看" ng-click="showText(globalConfig.item.key)">
+	                                <span ng-bind="globalConfig.key | limitTo: 250"></span>
+	                                <span ng-bind="globalConfig.key.length > 250 ? '...' :''"></span>
+	                            </td>
+	                            <td width="34%" class="cursor-pointer" title="点击查看" ng-click="showText(globalConfig.item.value)">
+	                                <span ng-bind="globalConfig.value | limitTo: 250"></span>
+	                                <span ng-bind="globalConfig.value.length > 250 ? '...': ''"></span>
+	                            </td>
+	
+	                            <td width="30%" class="text-center" ng-if="!config.isDeleted">
+	                                <img src="img/edit.png" data-tooltip="tooltip" data-placement="bottom" title="修改"
+	                                     ng-click="editItem(namespace, config.item, 3)"
+	                                     ng-show="hasModifyPermission" ng-disabled="true">
+	                                <img style="margin-left: 5px;" src="img/cancel.png"
+	                                     data-tooltip="tooltip" data-placement="bottom" title="删除"
+	                                     ng-click="preDeleteItem(namespace, config.item.id, 3)"
+	                                     ng-show="hasModifyPermission" ng-disabled="true">
+	                            </td>
+	                        </tr>
+	                        </tbody>
+	                    </table>
+	                </div>
+	              </div>
+	        </section> 
+        </div>
+ </section>
+    
+    
+    <!--默认配置信息  -->
+<section>
+    <div class="collapse in">
+       <header class="panel-heading second-panel-heading">
+             <div class="row">
+               <h4 class="col-md-6 col-sm-6 pull-left">默认配置</h4>
+                <div class="col-md-6 col-sm-6 text-right">
+                  <button type="button" class="btn btn-success btn-sm"
+                        data-tooltip="tooltip" data-placement="bottom" title="发布配置"
+                        ng-show="true"
+                        ng-disabled="namespace.isTextEditing">
+                    <img src="img/release.png">
+                    发布
+                  </button>
+                &nbsp;
+                  <button type="button" class="btn btn-primary btn-sm pull-right"
+                            ng-show="true">
+                        <img src="img/plus.png">
+                        新增配置
+                  </button>
+                </div>
+            </div>
+       </header>
+       <section class="namespace-view-table" ng-show="true">
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr align="center">
+                         <th class="hover" title="排序"
+                                ng-click="col='item.key';desc=!desc;">
+                               key&nbsp;
+                                <!-- <span class="glyphicon glyphicon-sort"></span> -->
+                          </th>
+                          <th>
+                               Value
+                          </th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background-color: #C0C0C0" ng-repeat ="(key, value) in applicationMetaConfigs track by $index" ><!--ng-repeat ="config in applicationMetaConfigs"  -->
+                        <td width="36%" class="cursor-pointer" title="点击查看">
+                                <span ng-bind="key"></span>
+                         </td>
+                         <td width="34%" class="cursor-pointer" title="点击查看">
+                                <span ng-bind="value"></span>
+                        </td>
+                        <td width="30%" class="text-center"> 
+                                <img src="img/edit.png" height="35px" width="35px" data-tooltip="tooltip" data-placement="bottom" title="修改"
+                                     ng-show="true">
+                                <img style="margin-left: 5px;" src="img/cancel.png" height="35px" width="35px"
+                                     data-tooltip="tooltip" data-placement="bottom" title="删除"
+                                     ng-show="true">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+   </div>
+</section>   
+
+
+    

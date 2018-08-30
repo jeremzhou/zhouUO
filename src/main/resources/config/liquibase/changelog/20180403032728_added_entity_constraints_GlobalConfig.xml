@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <!--
+        Added the constraints for entity GlobalConfig.
+    -->
+    <changeSet id="20180403032728-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="application_meta_id"
+                                 baseTableName="global_config"
+                                 constraintName="fk_global_config_application_meta_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="application_meta"/>
+
+    </changeSet>
+</databaseChangeLog>

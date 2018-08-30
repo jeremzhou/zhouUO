@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="uapolloApp.applicationMeta.detail.title">Application Meta</span> {{vm.applicationMeta.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="uapolloApp.applicationMeta.name">Name</span></dt>
+        <dd>
+            <span>{{vm.applicationMeta.name}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.applicationMeta.configFile">Config File</span></dt>
+        <dd>
+            <span>{{vm.applicationMeta.configFile}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.applicationMeta.configContent">Config Content</span></dt>
+        <dd>
+            <span>{{vm.applicationMeta.configContent}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.applicationMeta.createTime">Create Time</span></dt>
+        <dd>
+            <span>{{vm.applicationMeta.createTime}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.applicationMeta.modifyTime">Modify Time</span></dt>
+        <dd>
+            <span>{{vm.applicationMeta.modifyTime}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.applicationMeta.project">Project</span></dt>
+        <dd>
+            <a ui-sref="project-detail({id:vm.applicationMeta.projectId})">{{vm.applicationMeta.projectId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="application-meta-detail.edit({id:vm.applicationMeta.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

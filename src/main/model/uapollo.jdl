@@ -1,0 +1,188 @@
+entity Project {
+    name String required maxlength(32),
+    userId Integer required,
+    createTime Long required,
+    modifyTime Long required
+}
+
+entity ProjectHistory {
+    projectId Long required,
+    name String required maxlength(32),
+    userId Integer required,
+    operation Operation required,
+    createTime Long required
+}
+
+entity Node {
+    name String required maxlength(32),
+    createTime Long required,
+    modifyTime Long required
+}
+
+entity NodeHistory {
+    projectId Long required,
+    nodeId Long required,
+    name String required maxlength(32),
+    operation Operation required,
+    createTime Long required
+}
+
+entity Server {
+    ip String required maxlength(32),
+    createTime Long required,
+    modifyTime Long required
+}
+
+entity ServerHistory {
+    nodeId Long required,
+    serverId Long required,
+    ip String required maxlength(32),
+    operation Operation required,
+    createTime Long required
+}
+
+entity ApplicationMeta {
+    name String required maxlength(32),
+    configFile String required maxlength(32),
+    configContent TextBlob required,
+    createTime Long required,
+    modifyTime Long required
+}
+
+entity ApplicationMetaHistory {
+    projectId Long required,
+    applicationMetaId Long required,
+    name String required maxlength(32),
+    configFile String required maxlength(32),
+    configContent TextBlob required,
+    operation Operation required,
+    createTime Long required
+}
+
+entity Application {
+    createTime Long required,
+    modifyTime Long required
+}
+
+entity ApplicationHistory {
+    applicationMetaId Long required,
+    serverId Long required,
+    applicationId Long required,
+    operation Operation required,
+    createTime Long required
+}
+
+entity ApplicationConfig {
+    configContent TextBlob required,
+    createTime Long required,
+    modifyTime Long required
+}
+
+entity ApplicationConfigHistory {
+    applicationId Long required,
+    applicationConfigid Long required,
+    configContent TextBlob required,
+    operation Operation required,
+    createTime Long required
+}
+
+entity PrivateConfig {
+    key String required,
+    value String required,
+    createTime Long required,
+    modifyTime Long required
+}
+
+entity PrivateConfigHistory {
+    applicationId Long required,
+    privateConfigId Long required,
+    key String required,
+    value String required,
+    operation Operation required,
+    createTime Long required
+}
+
+entity NodeConfig {
+    key String required,
+    value String required,
+    createTime Long required,
+    modifyTime Long required
+}
+
+entity NodeConfigHistory {
+    applicationMetaId Long required,
+    nodeId Long required,
+    nodeConfigId Long required,
+    key String required,
+    value String required,
+    operation Operation required,
+    createTime Long required
+}
+
+entity GlobalConfig {
+    key String required,
+    value String required,
+    createTime Long required,
+    modifyTime Long required
+}
+
+entity GlobalConfigHistory {
+    applicationMetaId Long required,
+    globalConfigId Long required,
+    key String required,
+    value String required,
+    operation Operation required,
+    createTime Long required
+}
+
+entity ClientHeartbeatInfo {
+    ip String required maxlength(32),
+    applicationMetaName String required maxlength(32),
+    updateTime Long required,
+    updateVersion Long required,
+    heartbeatTime Long required,
+    heartbeatVersion Long required
+}
+
+enum Operation {
+    CREATE, UPDATE, DELTEE
+}
+
+relationship ManyToOne {
+	Node{project} to Project
+}
+
+relationship ManyToOne {
+	Server{node} to Node
+}
+
+relationship ManyToOne {
+	ApplicationMeta{project} to Project
+}
+
+relationship ManyToOne {
+	Application{applicationMeta} to ApplicationMeta,
+    Application{server} to Server
+}
+
+relationship ManyToOne {
+	ApplicationConfig{application} to Application
+}
+
+relationship ManyToOne {
+	PrivateConfig{application} to Application
+}
+
+relationship ManyToOne {
+	NodeConfig{applicationMeta} to ApplicationMeta,
+    NodeConfig{node} to Node
+}
+
+relationship ManyToOne {
+	GlobalConfig{applicationMeta} to ApplicationMeta
+}
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl

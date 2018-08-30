@@ -1,0 +1,26 @@
+
+{
+    "uapolloApp": {
+        "nodeHistory" : {
+            "home": {
+                "title": "Node Histories",
+                "createLabel": "创建新 Node History",
+                "createOrEditLabel": "创建或编辑 Node History"
+            },
+            "created": "Node History {{ param }} 创建成功",
+            "updated": "Node History {{ param }} 更新成功",
+            "deleted": "Node History {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Node History {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Node History"
+            },
+            "projectId": "Project Id",
+            "nodeId": "Node Id",
+            "name": "Name",
+            "operation": "Operation",
+            "createTime": "Create Time"
+        }
+    }
+}

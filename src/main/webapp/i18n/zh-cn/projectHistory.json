@@ -1,0 +1,26 @@
+
+{
+    "uapolloApp": {
+        "projectHistory" : {
+            "home": {
+                "title": "Project Histories",
+                "createLabel": "创建新 Project History",
+                "createOrEditLabel": "创建或编辑 Project History"
+            },
+            "created": "Project History {{ param }} 创建成功",
+            "updated": "Project History {{ param }} 更新成功",
+            "deleted": "Project History {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Project History {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Project History"
+            },
+            "projectId": "Project Id",
+            "name": "Name",
+            "userId": "User Id",
+            "operation": "Operation",
+            "createTime": "Create Time"
+        }
+    }
+}

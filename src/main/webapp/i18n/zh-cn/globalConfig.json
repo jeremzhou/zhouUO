@@ -1,0 +1,26 @@
+
+{
+    "uapolloApp": {
+        "globalConfig" : {
+            "home": {
+                "title": "Global Configs",
+                "createLabel": "创建新 Global Config",
+                "createOrEditLabel": "创建或编辑 Global Config"
+            },
+            "created": "Global Config {{ param }} 创建成功",
+            "updated": "Global Config {{ param }} 更新成功",
+            "deleted": "Global Config {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Global Config {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Global Config"
+            },
+            "key": "Key",
+            "value": "Value",
+            "createTime": "Create Time",
+            "modifyTime": "Modify Time",
+            "applicationMeta": "Application Meta"
+        }
+    }
+}

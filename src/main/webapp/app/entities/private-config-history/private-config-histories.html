@@ -1,0 +1,66 @@
+<div>
+    <h2 data-translate="uapolloApp.privateConfigHistory.home.title">Private Config Histories</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="private-config-history.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="uapolloApp.privateConfigHistory.home.createLabel">
+                        Create new Private Config History
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="uapolloApp.privateConfigHistory.applicationId">Application Id</span></th>
+                    <th><span data-translate="uapolloApp.privateConfigHistory.privateConfigId">Private Config Id</span></th>
+                    <th><span data-translate="uapolloApp.privateConfigHistory.key">Key</span></th>
+                    <th><span data-translate="uapolloApp.privateConfigHistory.value">Value</span></th>
+                    <th><span data-translate="uapolloApp.privateConfigHistory.operation">Operation</span></th>
+                    <th><span data-translate="uapolloApp.privateConfigHistory.createTime">Create Time</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="privateConfigHistory in vm.privateConfigHistories track by privateConfigHistory.id">
+                    <td><a ui-sref="private-config-history-detail({id:privateConfigHistory.id})">{{privateConfigHistory.id}}</a></td>
+                    <td>{{privateConfigHistory.applicationId}}</td>
+                    <td>{{privateConfigHistory.privateConfigId}}</td>
+                    <td>{{privateConfigHistory.key}}</td>
+                    <td>{{privateConfigHistory.value}}</td>
+                    <td data-translate="{{'uapolloApp.Operation.' + privateConfigHistory.operation}}">{{privateConfigHistory.operation}}</td>
+                    <td>{{privateConfigHistory.createTime}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="private-config-history-detail({id:privateConfigHistory.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="private-config-history.edit({id:privateConfigHistory.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="private-config-history.delete({id:privateConfigHistory.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

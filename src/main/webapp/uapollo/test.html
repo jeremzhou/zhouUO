@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="ModalDemo">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="./img/config.png">
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/angular/angular-toastr-1.4.1.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" media='all' href="vendor/angular/loading-bar.min.css">
+    <link rel="stylesheet" type="text/css" href="styles/common-style.css">
+
+    <title>test</title>
+</head>
+<body>
+<div ng-controller="ModelCtr">
+     
+     <div class="modal-header">  
+            <h3>I'm a modal!</h3>  
+     </div>
+     <div class="modal-body">
+        <ul>
+            <li ng-repeat="item in items">
+                <a ng-click="selected.item = item">{{ item }}</a>
+            </li>
+        </ul>
+        Selected :<b> {{selected.item}}</b>
+     </div>
+     <div class="modal-footer"> 
+            <button class="btn btn-primary" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" ng-click="cancel()">cancel</button>
+     </div>
+     <button class="btn" ng-click="open()">Open me!</button>
+</div>
+<script type="text/javascript">
+var ModalDemo = angular.module('ModalDemo', [ 'ui.bootstrap' ]);  
+var ModelCtr = function($scope, $modal, $log) {  
+    $scope.items = [ 'item1', 'item2', 'item3' ];  
+    $scope.open = function() {  
+        var modalInstance = $modal.open({  
+            templateUrl : 'myModalContent.html',  
+            controller : ModalInstanceCtrl,  
+            resolve : {  
+                items : function() {  
+                    return $scope.items;  
+                }  
+            }  
+        });  
+        modalInstance.opened.then(function() {// 模态窗口打开之后执行的函数  
+            console.log('modal is opened');  
+        });  
+        modalInstance.result.then(function(result) {  
+            console.log(result);  
+        }, function(reason) {  
+            console.log(reason);// 点击空白区域，总会输出backdrop  
+            // click，点击取消，则会暑促cancel  
+            $log.info('Modal dismissed at: ' + new Date());  
+        });  
+    };  
+};  
+var ModalInstanceCtrl = function($scope, $modalInstance, items) {  
+    $scope.items = items;  
+    $scope.selected = {  
+        item : $scope.items[0]  
+    };  
+    $scope.ok = function() {  
+        $modalInstance.close($scope.selected);  
+    };  
+    $scope.cancel = function() {  
+        $modalInstance.dismiss('cancel');  
+    };  
+}; 
+</script>
+
+<!--angular-->
+<script src="vendor/angular/angular.min.js"></script>
+<script src="vendor/angular/angular-resource.min.js"></script>
+<script src="vendor/angular/angular-toastr-1.4.1.tpls.min.js"></script>
+<script src="vendor/angular/loading-bar.min.js"></script>
+</body>
+</html>

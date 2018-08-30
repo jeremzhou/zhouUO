@@ -1,0 +1,26 @@
+
+{
+    "uapolloApp": {
+        "applicationConfigHistory" : {
+            "home": {
+                "title": "Application Config Histories",
+                "createLabel": "创建新 Application Config History",
+                "createOrEditLabel": "创建或编辑 Application Config History"
+            },
+            "created": "Application Config History {{ param }} 创建成功",
+            "updated": "Application Config History {{ param }} 更新成功",
+            "deleted": "Application Config History {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Application Config History {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Application Config History"
+            },
+            "applicationId": "Application Id",
+            "applicationConfigid": "Application Configid",
+            "configContent": "Config Content",
+            "operation": "Operation",
+            "createTime": "Create Time"
+        }
+    }
+}

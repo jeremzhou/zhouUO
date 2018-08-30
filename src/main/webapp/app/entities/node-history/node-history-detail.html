@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="uapolloApp.nodeHistory.detail.title">Node History</span> {{vm.nodeHistory.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="uapolloApp.nodeHistory.projectId">Project Id</span></dt>
+        <dd>
+            <span>{{vm.nodeHistory.projectId}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.nodeHistory.nodeId">Node Id</span></dt>
+        <dd>
+            <span>{{vm.nodeHistory.nodeId}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.nodeHistory.name">Name</span></dt>
+        <dd>
+            <span>{{vm.nodeHistory.name}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.nodeHistory.operation">Operation</span></dt>
+        <dd>
+            <span data-translate="{{'uapolloApp.Operation.' + vm.nodeHistory.operation}}">{{vm.nodeHistory.operation}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.nodeHistory.createTime">Create Time</span></dt>
+        <dd>
+            <span>{{vm.nodeHistory.createTime}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="node-history-detail.edit({id:vm.nodeHistory.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

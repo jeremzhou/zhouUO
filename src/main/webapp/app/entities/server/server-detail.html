@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="uapolloApp.server.detail.title">Server</span> {{vm.server.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="uapolloApp.server.ip">Ip</span></dt>
+        <dd>
+            <span>{{vm.server.ip}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.server.createTime">Create Time</span></dt>
+        <dd>
+            <span>{{vm.server.createTime}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.server.modifyTime">Modify Time</span></dt>
+        <dd>
+            <span>{{vm.server.modifyTime}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.server.node">Node</span></dt>
+        <dd>
+            <a ui-sref="node-detail({id:vm.server.nodeId})">{{vm.server.nodeId}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="server-detail.edit({id:vm.server.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

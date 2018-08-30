@@ -1,0 +1,25 @@
+
+{
+    "uapolloApp": {
+        "node" : {
+            "home": {
+                "title": "Nodes",
+                "createLabel": "创建新 Node",
+                "createOrEditLabel": "创建或编辑 Node"
+            },
+            "created": "Node {{ param }} 创建成功",
+            "updated": "Node {{ param }} 更新成功",
+            "deleted": "Node {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Node {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Node"
+            },
+            "name": "Name",
+            "createTime": "Create Time",
+            "modifyTime": "Modify Time",
+            "project": "Project"
+        }
+    }
+}

@@ -1,0 +1,64 @@
+<div>
+    <h2 data-translate="uapolloApp.applicationHistory.home.title">Application Histories</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="application-history.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="uapolloApp.applicationHistory.home.createLabel">
+                        Create new Application History
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="uapolloApp.applicationHistory.applicationMetaId">Application Meta Id</span></th>
+                    <th><span data-translate="uapolloApp.applicationHistory.serverId">Server Id</span></th>
+                    <th><span data-translate="uapolloApp.applicationHistory.applicationId">Application Id</span></th>
+                    <th><span data-translate="uapolloApp.applicationHistory.operation">Operation</span></th>
+                    <th><span data-translate="uapolloApp.applicationHistory.createTime">Create Time</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="applicationHistory in vm.applicationHistories track by applicationHistory.id">
+                    <td><a ui-sref="application-history-detail({id:applicationHistory.id})">{{applicationHistory.id}}</a></td>
+                    <td>{{applicationHistory.applicationMetaId}}</td>
+                    <td>{{applicationHistory.serverId}}</td>
+                    <td>{{applicationHistory.applicationId}}</td>
+                    <td data-translate="{{'uapolloApp.Operation.' + applicationHistory.operation}}">{{applicationHistory.operation}}</td>
+                    <td>{{applicationHistory.createTime}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="application-history-detail({id:applicationHistory.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="application-history.edit({id:applicationHistory.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="application-history.delete({id:applicationHistory.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

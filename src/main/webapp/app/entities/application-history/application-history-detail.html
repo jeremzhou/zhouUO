@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="uapolloApp.applicationHistory.detail.title">Application History</span> {{vm.applicationHistory.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="uapolloApp.applicationHistory.applicationMetaId">Application Meta Id</span></dt>
+        <dd>
+            <span>{{vm.applicationHistory.applicationMetaId}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.applicationHistory.serverId">Server Id</span></dt>
+        <dd>
+            <span>{{vm.applicationHistory.serverId}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.applicationHistory.applicationId">Application Id</span></dt>
+        <dd>
+            <span>{{vm.applicationHistory.applicationId}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.applicationHistory.operation">Operation</span></dt>
+        <dd>
+            <span data-translate="{{'uapolloApp.Operation.' + vm.applicationHistory.operation}}">{{vm.applicationHistory.operation}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.applicationHistory.createTime">Create Time</span></dt>
+        <dd>
+            <span>{{vm.applicationHistory.createTime}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="application-history-detail.edit({id:vm.applicationHistory.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

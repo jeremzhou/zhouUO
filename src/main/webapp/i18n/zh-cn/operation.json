@@ -1,0 +1,10 @@
+{
+    "uapolloApp": {
+        "Operation" : {
+            "null": "",
+            "CREATE": "CREATE",
+            "UPDATE": "UPDATE",
+            "DELTEE": "DELTEE"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+
+{
+    "uapolloApp": {
+        "serverHistory" : {
+            "home": {
+                "title": "Server Histories",
+                "createLabel": "创建新 Server History",
+                "createOrEditLabel": "创建或编辑 Server History"
+            },
+            "created": "Server History {{ param }} 创建成功",
+            "updated": "Server History {{ param }} 更新成功",
+            "deleted": "Server History {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Server History {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Server History"
+            },
+            "nodeId": "Node Id",
+            "serverId": "Server Id",
+            "ip": "Ip",
+            "operation": "Operation",
+            "createTime": "Create Time"
+        }
+    }
+}

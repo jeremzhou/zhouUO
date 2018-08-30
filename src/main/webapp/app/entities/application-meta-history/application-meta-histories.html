@@ -1,0 +1,68 @@
+<div>
+    <h2 data-translate="uapolloApp.applicationMetaHistory.home.title">Application Meta Histories</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="application-meta-history.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="uapolloApp.applicationMetaHistory.home.createLabel">
+                        Create new Application Meta History
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="uapolloApp.applicationMetaHistory.projectId">Project Id</span></th>
+                    <th><span data-translate="uapolloApp.applicationMetaHistory.applicationMetaId">Application Meta Id</span></th>
+                    <th><span data-translate="uapolloApp.applicationMetaHistory.name">Name</span></th>
+                    <th><span data-translate="uapolloApp.applicationMetaHistory.configFile">Config File</span></th>
+                    <th><span data-translate="uapolloApp.applicationMetaHistory.configContent">Config Content</span></th>
+                    <th><span data-translate="uapolloApp.applicationMetaHistory.operation">Operation</span></th>
+                    <th><span data-translate="uapolloApp.applicationMetaHistory.createTime">Create Time</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="applicationMetaHistory in vm.applicationMetaHistories track by applicationMetaHistory.id">
+                    <td><a ui-sref="application-meta-history-detail({id:applicationMetaHistory.id})">{{applicationMetaHistory.id}}</a></td>
+                    <td>{{applicationMetaHistory.projectId}}</td>
+                    <td>{{applicationMetaHistory.applicationMetaId}}</td>
+                    <td>{{applicationMetaHistory.name}}</td>
+                    <td>{{applicationMetaHistory.configFile}}</td>
+                    <td>{{applicationMetaHistory.configContent}}</td>
+                    <td data-translate="{{'uapolloApp.Operation.' + applicationMetaHistory.operation}}">{{applicationMetaHistory.operation}}</td>
+                    <td>{{applicationMetaHistory.createTime}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="application-meta-history-detail({id:applicationMetaHistory.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="application-meta-history.edit({id:applicationMetaHistory.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="application-meta-history.delete({id:applicationMetaHistory.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

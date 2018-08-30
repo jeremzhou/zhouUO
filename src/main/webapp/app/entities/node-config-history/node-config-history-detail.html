@@ -1,0 +1,47 @@
+
+<div>
+    <h2><span data-translate="uapolloApp.nodeConfigHistory.detail.title">Node Config History</span> {{vm.nodeConfigHistory.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="uapolloApp.nodeConfigHistory.applicationMetaId">Application Meta Id</span></dt>
+        <dd>
+            <span>{{vm.nodeConfigHistory.applicationMetaId}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.nodeConfigHistory.nodeId">Node Id</span></dt>
+        <dd>
+            <span>{{vm.nodeConfigHistory.nodeId}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.nodeConfigHistory.nodeConfigId">Node Config Id</span></dt>
+        <dd>
+            <span>{{vm.nodeConfigHistory.nodeConfigId}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.nodeConfigHistory.key">Key</span></dt>
+        <dd>
+            <span>{{vm.nodeConfigHistory.key}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.nodeConfigHistory.value">Value</span></dt>
+        <dd>
+            <span>{{vm.nodeConfigHistory.value}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.nodeConfigHistory.operation">Operation</span></dt>
+        <dd>
+            <span data-translate="{{'uapolloApp.Operation.' + vm.nodeConfigHistory.operation}}">{{vm.nodeConfigHistory.operation}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.nodeConfigHistory.createTime">Create Time</span></dt>
+        <dd>
+            <span>{{vm.nodeConfigHistory.createTime}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="node-config-history-detail.edit({id:vm.nodeConfigHistory.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,68 @@
+<div>
+    <h2 data-translate="uapolloApp.applicationMeta.home.title">Application Metas</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="application-meta.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="uapolloApp.applicationMeta.home.createLabel">
+                        Create new Application Meta
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="uapolloApp.applicationMeta.name">Name</span></th>
+                    <th><span data-translate="uapolloApp.applicationMeta.configFile">Config File</span></th>
+                    <th><span data-translate="uapolloApp.applicationMeta.configContent">Config Content</span></th>
+                    <th><span data-translate="uapolloApp.applicationMeta.createTime">Create Time</span></th>
+                    <th><span data-translate="uapolloApp.applicationMeta.modifyTime">Modify Time</span></th>
+                    <th><span data-translate="uapolloApp.applicationMeta.project">Project</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="applicationMeta in vm.applicationMetas track by applicationMeta.id">
+                    <td><a ui-sref="application-meta-detail({id:applicationMeta.id})">{{applicationMeta.id}}</a></td>
+                    <td>{{applicationMeta.name}}</td>
+                    <td>{{applicationMeta.configFile}}</td>
+                    <td>{{applicationMeta.configContent}}</td>
+                    <td>{{applicationMeta.createTime}}</td>
+                    <td>{{applicationMeta.modifyTime}}</td>
+                    <td>
+                        <a ui-sref="project-detail({id:applicationMeta.projectId})">{{applicationMeta.projectId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="application-meta-detail({id:applicationMeta.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="application-meta.edit({id:applicationMeta.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="application-meta.delete({id:applicationMeta.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="uapolloApp.globalConfigHistory.detail.title">Global Config History</span> {{vm.globalConfigHistory.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="uapolloApp.globalConfigHistory.applicationMetaId">Application Meta Id</span></dt>
+        <dd>
+            <span>{{vm.globalConfigHistory.applicationMetaId}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.globalConfigHistory.globalConfigId">Global Config Id</span></dt>
+        <dd>
+            <span>{{vm.globalConfigHistory.globalConfigId}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.globalConfigHistory.key">Key</span></dt>
+        <dd>
+            <span>{{vm.globalConfigHistory.key}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.globalConfigHistory.value">Value</span></dt>
+        <dd>
+            <span>{{vm.globalConfigHistory.value}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.globalConfigHistory.operation">Operation</span></dt>
+        <dd>
+            <span data-translate="{{'uapolloApp.Operation.' + vm.globalConfigHistory.operation}}">{{vm.globalConfigHistory.operation}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.globalConfigHistory.createTime">Create Time</span></dt>
+        <dd>
+            <span>{{vm.globalConfigHistory.createTime}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="global-config-history-detail.edit({id:vm.globalConfigHistory.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

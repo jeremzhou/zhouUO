@@ -1,0 +1,26 @@
+
+{
+    "uapolloApp": {
+        "privateConfig" : {
+            "home": {
+                "title": "Private Configs",
+                "createLabel": "创建新 Private Config",
+                "createOrEditLabel": "创建或编辑 Private Config"
+            },
+            "created": "Private Config {{ param }} 创建成功",
+            "updated": "Private Config {{ param }} 更新成功",
+            "deleted": "Private Config {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Private Config {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Private Config"
+            },
+            "key": "Key",
+            "value": "Value",
+            "createTime": "Create Time",
+            "modifyTime": "Modify Time",
+            "application": "Application"
+        }
+    }
+}

@@ -1,0 +1,128 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myNodeConfigHistoryLabel" data-translate="uapolloApp.nodeConfigHistory.home.createOrEditLabel">Create or edit a Node Config History</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.nodeConfigHistory.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.nodeConfigHistory.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="uapolloApp.nodeConfigHistory.applicationMetaId" for="field_applicationMetaId">Application Meta Id</label>
+            <input type="number" class="form-control" name="applicationMetaId" id="field_applicationMetaId"
+                    ng-model="vm.nodeConfigHistory.applicationMetaId"
+                    required/>
+            <div ng-show="editForm.applicationMetaId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.applicationMetaId.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.applicationMetaId.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="uapolloApp.nodeConfigHistory.nodeId" for="field_nodeId">Node Id</label>
+            <input type="number" class="form-control" name="nodeId" id="field_nodeId"
+                    ng-model="vm.nodeConfigHistory.nodeId"
+                    required/>
+            <div ng-show="editForm.nodeId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.nodeId.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.nodeId.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="uapolloApp.nodeConfigHistory.nodeConfigId" for="field_nodeConfigId">Node Config Id</label>
+            <input type="number" class="form-control" name="nodeConfigId" id="field_nodeConfigId"
+                    ng-model="vm.nodeConfigHistory.nodeConfigId"
+                    required/>
+            <div ng-show="editForm.nodeConfigId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.nodeConfigId.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.nodeConfigId.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="uapolloApp.nodeConfigHistory.key" for="field_key">Key</label>
+            <input type="text" class="form-control" name="key" id="field_key"
+                    ng-model="vm.nodeConfigHistory.key"
+                    required/>
+            <div ng-show="editForm.key.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.key.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="uapolloApp.nodeConfigHistory.value" for="field_value">Value</label>
+            <input type="text" class="form-control" name="value" id="field_value"
+                    ng-model="vm.nodeConfigHistory.value"
+                    required/>
+            <div ng-show="editForm.value.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.value.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="uapolloApp.nodeConfigHistory.operation" for="field_operation">Operation</label>
+            <select class="form-control" name="operation" ng-model="vm.nodeConfigHistory.operation" id="field_operation" required>
+                <option value="CREATE" data-translate="uapolloApp.Operation.CREATE">CREATE</option>
+                <option value="UPDATE" data-translate="uapolloApp.Operation.UPDATE">UPDATE</option>
+                <option value="DELTEE" data-translate="uapolloApp.Operation.DELTEE">DELTEE</option>
+            </select>
+            <div ng-show="editForm.operation.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.operation.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="uapolloApp.nodeConfigHistory.createTime" for="field_createTime">Create Time</label>
+            <input type="number" class="form-control" name="createTime" id="field_createTime"
+                    ng-model="vm.nodeConfigHistory.createTime"
+                    required/>
+            <div ng-show="editForm.createTime.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.createTime.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.createTime.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

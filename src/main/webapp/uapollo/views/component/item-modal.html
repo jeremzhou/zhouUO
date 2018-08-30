@@ -1,0 +1,124 @@
+<form id="itemModal" class="modal fade" valdr-type="Item" name="itemForm"
+      ng-submit="doItem()">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+             <div class="modal-header panel-primary">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">
+                    <span ng-show="configViewType == 'createPirvateConfig'">添加私有配置</span>
+                    <span ng-show="configViewType == 'createNodeConfig'">添加节点配置</span>
+                    <span ng-show="configViewType == 'createGlobalConfig'">添加全局配置</span>
+                    
+                    <span ng-show="configViewType == 'updatePrivateConfig'">修改私有配置</span>
+                    <span ng-show="configViewType == 'updateNodeConfig'">修改节点配置</span>
+                    <span ng-show="configViewType == 'updateGlobalConfig'">修改全局配置</span>  
+                </h4>
+            </div>  
+            <div>
+            </div> 
+           
+            <div class="modal-body form-horizontal">
+                
+                <div class="form-group" ng-show="false">
+                    <label class="col-sm-2 control-label">
+                        <apollorequiredfield
+                                ng-show="tableViewOperType == 'create'"></apollorequiredfield>
+                        ID
+                    </label>
+                    <div class="col-sm-10" valdr-form-group>
+                        <input type="text" class="form-control" ng-model="config.id" tabindex="1"
+                               ng-disabled="tableViewOperType != 'create'"/>
+                    </div>
+                </div>
+            
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">
+                        <apollorequiredfield
+                                ng-show="tableViewOperType == 'create'"></apollorequiredfield>
+                        Key
+                    </label>
+                    <div class="col-sm-10" valdr-form-group>
+                       <input type="text" class="form-control search-input" ng-show = "tableViewOperType == 'create'"
+                           style="width: 100%"  ng-focus="changeSearchKey()" name = "configkey" id= "one"
+                           ng-model="configkey"  ng-required = "judge1" autocomplete="off">  
+	                    <div class="row app-list" ng-show="shouldShowKeysList" style="width:96.5%" >
+	                        <div ng-repeat="(key, value) in copykeys track by $index" class="app-item" ng-class="{'app-selected':app.selected}"
+	                             ng-click="selectkeys(key)">   {{key}}
+	                        </div>
+	                    </div>
+	                    
+	                    <input type="text" class="form-control search-input" name = "configskey"
+                           style="width: 100%"   ng-show = "tableViewOperType == 'update'"
+                           ng-model="configskey" ng-disabled="tableViewOperType != 'creaet'" >  
+                    </div>
+                </div>
+                
+                
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">
+                        <apollorequiredfield></apollorequiredfield>
+                        Value
+                    </label>
+                    <div class="col-sm-10" valdr-form-group>
+                        <textarea name="configValue" class="form-control" rows="6" tabindex="2"
+                                  ng-show = "tableViewOperType == 'create'" ng-required="judge1" 
+                                  ng-model="configValue">
+                        </textarea>
+                        
+                        <textarea name="configsValue" class="form-control" rows="6" tabindex="2"
+                                  ng-required="judge2" ng-show = "tableViewOperType == 'update'"
+                                  ng-model="configsValue">
+                        </textarea>
+                    </div>
+                </div>
+                
+                <div class="form-group" ng-show="false">
+                    <label class="col-sm-2 control-label">
+                        <apollorequiredfield
+                                ng-show="tableViewOperType == 'create'"></apollorequiredfield>
+                                                                应用MetaID
+                    </label>
+                    <div class="col-sm-10" valdr-form-group>
+                        <input type="text" class="form-control" ng-model="config.applicationMetaId" tabindex="1"
+                              ng-disabled="viewType != 'create'"/>
+                    </div>
+                </div>
+                
+                <div class="form-group" ng-show="false">
+                    <label class="col-sm-2 control-label">
+                        <apollorequiredfield
+                                ng-show="tableViewOperType == 'create'"></apollorequiredfield>
+                                                                应用ID
+                    </label>
+                    <div class="col-sm-10" valdr-form-group>
+                        <input type="text"  class="form-control" ng-model="config.applicationId" tabindex="1"
+                              ng-disabled="viewType != 'create'"/>
+                    </div>
+                </div>
+                
+                 <div class="form-group" ng-show="false">
+                    <label class="col-sm-2 control-label">
+                        <apollorequiredfield
+                                ng-show="tableViewOperType == 'create'"></apollorequiredfield>
+                                                                节点ID
+                    </label>
+                    <div class="col-sm-10" valdr-form-group>
+                        <input type="text" class="form-control" ng-model="config.nodeId" tabindex="1"
+                              ng-disabled="viewType != 'create'"/>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">
+                    取消
+                </button>
+                <button type="submit" class="btn btn-primary"
+                        ng-disabled="itemForm.$invalid">
+                    提交
+                </button>
+            </div>
+        </div>
+    </div>
+</form>

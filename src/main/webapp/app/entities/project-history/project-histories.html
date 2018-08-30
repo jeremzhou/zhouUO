@@ -1,0 +1,64 @@
+<div>
+    <h2 data-translate="uapolloApp.projectHistory.home.title">Project Histories</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="project-history.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="uapolloApp.projectHistory.home.createLabel">
+                        Create new Project History
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span data-translate="global.field.id">ID</span></th>
+                    <th><span data-translate="uapolloApp.projectHistory.projectId">Project Id</span></th>
+                    <th><span data-translate="uapolloApp.projectHistory.name">Name</span></th>
+                    <th><span data-translate="uapolloApp.projectHistory.userId">User Id</span></th>
+                    <th><span data-translate="uapolloApp.projectHistory.operation">Operation</span></th>
+                    <th><span data-translate="uapolloApp.projectHistory.createTime">Create Time</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="projectHistory in vm.projectHistories track by projectHistory.id">
+                    <td><a ui-sref="project-history-detail({id:projectHistory.id})">{{projectHistory.id}}</a></td>
+                    <td>{{projectHistory.projectId}}</td>
+                    <td>{{projectHistory.name}}</td>
+                    <td>{{projectHistory.userId}}</td>
+                    <td data-translate="{{'uapolloApp.Operation.' + projectHistory.operation}}">{{projectHistory.operation}}</td>
+                    <td>{{projectHistory.createTime}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="project-history-detail({id:projectHistory.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="project-history.edit({id:projectHistory.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="project-history.delete({id:projectHistory.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-sm-down" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

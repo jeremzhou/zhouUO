@@ -1,0 +1,28 @@
+
+{
+    "uapolloApp": {
+        "applicationMetaHistory" : {
+            "home": {
+                "title": "Application Meta Histories",
+                "createLabel": "创建新 Application Meta History",
+                "createOrEditLabel": "创建或编辑 Application Meta History"
+            },
+            "created": "Application Meta History {{ param }} 创建成功",
+            "updated": "Application Meta History {{ param }} 更新成功",
+            "deleted": "Application Meta History {{ param }} 删除成功",
+            "delete": {
+                "question": "你确定要删除 Application Meta History {{ id }} 吗？"
+            },
+            "detail": {
+                "title": "Application Meta History"
+            },
+            "projectId": "Project Id",
+            "applicationMetaId": "Application Meta Id",
+            "name": "Name",
+            "configFile": "Config File",
+            "configContent": "Config Content",
+            "operation": "Operation",
+            "createTime": "Create Time"
+        }
+    }
+}

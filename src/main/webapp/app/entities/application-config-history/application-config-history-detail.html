@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span data-translate="uapolloApp.applicationConfigHistory.detail.title">Application Config History</span> {{vm.applicationConfigHistory.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="uapolloApp.applicationConfigHistory.applicationId">Application Id</span></dt>
+        <dd>
+            <span>{{vm.applicationConfigHistory.applicationId}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.applicationConfigHistory.applicationConfigid">Application Configid</span></dt>
+        <dd>
+            <span>{{vm.applicationConfigHistory.applicationConfigid}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.applicationConfigHistory.configContent">Config Content</span></dt>
+        <dd>
+            <span>{{vm.applicationConfigHistory.configContent}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.applicationConfigHistory.operation">Operation</span></dt>
+        <dd>
+            <span data-translate="{{'uapolloApp.Operation.' + vm.applicationConfigHistory.operation}}">{{vm.applicationConfigHistory.operation}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.applicationConfigHistory.createTime">Create Time</span></dt>
+        <dd>
+            <span>{{vm.applicationConfigHistory.createTime}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="application-config-history-detail.edit({id:vm.applicationConfigHistory.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

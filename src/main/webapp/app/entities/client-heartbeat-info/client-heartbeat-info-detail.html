@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="uapolloApp.clientHeartbeatInfo.detail.title">Client Heartbeat Info</span> {{vm.clientHeartbeatInfo.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="uapolloApp.clientHeartbeatInfo.ip">Ip</span></dt>
+        <dd>
+            <span>{{vm.clientHeartbeatInfo.ip}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.clientHeartbeatInfo.applicationMetaName">Application Meta Name</span></dt>
+        <dd>
+            <span>{{vm.clientHeartbeatInfo.applicationMetaName}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.clientHeartbeatInfo.updateTime">Update Time</span></dt>
+        <dd>
+            <span>{{vm.clientHeartbeatInfo.updateTime}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.clientHeartbeatInfo.updateVersion">Update Version</span></dt>
+        <dd>
+            <span>{{vm.clientHeartbeatInfo.updateVersion}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.clientHeartbeatInfo.heartbeatTime">Heartbeat Time</span></dt>
+        <dd>
+            <span>{{vm.clientHeartbeatInfo.heartbeatTime}}</span>
+        </dd>
+        <dt><span data-translate="uapolloApp.clientHeartbeatInfo.heartbeatVersion">Heartbeat Version</span></dt>
+        <dd>
+            <span>{{vm.clientHeartbeatInfo.heartbeatVersion}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="client-heartbeat-info-detail.edit({id:vm.clientHeartbeatInfo.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>
